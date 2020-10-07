@@ -29,3 +29,32 @@ export function arrayWeave (){
 
     console.log(solution)
 }
+// Random with Math library
+export const exponentRandom = () => {
+    const numOne = Math.floor((Math.random()* 10) + 1)
+    const numTwo = Math.floor((Math.random()* 10) + 1)
+    console.log(numOne, numTwo)
+    return Math.pow(numOne, numTwo);
+}
+
+// Without Math Library, with **
+export const exponentTwo = (numOne, numTwo) => {
+    return parseInt(numOne ** numTwo)
+}
+
+// Without either
+export const exponentThree = (numOne, numTwo) => {
+    let result = 1;
+    for (let i = 0; i < numTwo; i++) {
+        result *= numOne;
+    }
+    return result;
+}
+
+// Jordan's solution
+export const toThePowerOf = (num, exp) => {
+    const items = Array(exp).fill(num);
+    const reducer = (total, currentValue) => total * currentValue;
+    return items.reduce(reducer);
+}
+
